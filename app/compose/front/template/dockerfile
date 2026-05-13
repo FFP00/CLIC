@@ -46,8 +46,8 @@ FROM oven/bun:slim
     # Crear usuario con UID, nombre y alias proporcionados, además de personalizar el shell
     RUN useradd -m -U -u ${UID} -s /bin/bash ${USER} \
         && echo 'PS1="\w # "' >> /home/${USER}/.bash_aliases \
-        && echo "alias bun-run-dev='bun run dev -H 0.0.0.0'" >> /home/${USER}/.bash_aliases \
-        && echo "alias npm-run-dev='npm run dev -H 0.0.0.0'" >> /home/${USER}/.bash_aliases \
+        && echo "alias bun-run-dev='bun run dev --host 0.0.0.0'" >> /home/${USER}/.bash_aliases \
+        && echo "alias npm-run-dev='npm run dev --host 0.0.0.0'" >> /home/${USER}/.bash_aliases \
         && chown ${USER}:${USER} /home/${USER}/.bash_aliases
 
 # Mantener contenedor vivo
