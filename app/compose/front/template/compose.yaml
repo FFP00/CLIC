@@ -11,7 +11,7 @@ services:
     container_name: ${CONTAINER_SHELL}
     user: "${UID}:${GID}"
     ports:
-      - "127.0.0.1::3000"
+      - "127.0.0.1:5173:5173"
     restart: always
     environment:
       # Variables de localizacion
