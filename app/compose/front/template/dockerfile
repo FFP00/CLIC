@@ -23,6 +23,7 @@ FROM oven/bun:slim
             curl \
             git \
             wget \
+            make \
             # Dependencias de Tauri
             build-essential \
             file \

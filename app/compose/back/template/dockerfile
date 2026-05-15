@@ -17,6 +17,7 @@ FROM ghcr.io/astral-sh/uv:python3.12-trixie-slim
             curl \
             git \
             wget \
+            make \
         # Limpieza de cache
         && rm -rf /var/lib/apt/lists/*
 
