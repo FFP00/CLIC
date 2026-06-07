@@ -62,6 +62,19 @@ services:
     networks:
       - ${COMPOSE_NAME}_network
 
+  redis:
+    image: redis:8-trixie
+    ports:
+    - "127.0.0.1:6379:6379"
+    restart: always
+    environment:
+      # Variables de localizacion
+      <<: *localization
+    depends_on:
+      - ${CONTAINER_SHELL}
+    networks:
+      - ${COMPOSE_NAME}_network
+
 volumes:
   database_data:
 
